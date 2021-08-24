@@ -32,4 +32,5 @@ Test(basic_tests, should_pass_all_the_tests_provided)
   cr_assert_eq(reverse(1147483647), 0, "Should be 0");
   cr_assert_eq(reverse(1534236469), 0, "Should be 0");
   cr_assert_eq(reverse(1463847412), 2147483641, "Should be 0");
+  cr_assert_eq(reverse(-2147483642), 0, "Should be 0");
 }
