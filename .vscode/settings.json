@@ -1,6 +1,10 @@
 {
 	"files.associations": {
 		"*.js": "javascriptreact",
-		"criterion.h": "c"
+		"criterion.h": "c",
+		"stdio.h": "c",
+		"sstream": "c",
+		"random": "c",
+		"algorithm": "c"
 	}
 }

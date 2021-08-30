@@ -30,7 +30,7 @@
                         "args": [
                                 "--debug=gdb"
                         ],
-                        "isBackground": true,
+                        "isBackground": false,
                         "dependsOn":["C/C++: gcc build active file"]                
                 }
         ],

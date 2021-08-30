@@ -13,8 +13,7 @@
 			"args": [""],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
-			"environment": [], 
-			"envFile": "${workspaceFolder}/.vscode/env",
+			"envFile": "${workspaceFolder}/.env",
 			"externalConsole": false,
 			"MIMode": "gdb",
 			"miDebuggerPath": "/usr/bin/gdb",
@@ -35,11 +34,8 @@
 			"args": [""],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
-			"environment": [], 
-			"envFile": "${workspaceFolder}/.vscode/env",
+			"envFile": "${workspaceFolder}/.env",
 			"externalConsole": false,
-			"MIMode": "gdb",
-			"miDebuggerPath": "/usr/bin/gdb",
 			"miDebuggerServerAddress": "localhost:1234",
 			"setupCommands": [
 				{
