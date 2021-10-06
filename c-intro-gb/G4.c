@@ -2,28 +2,30 @@
 #include <stdlib.h>
 #include <string.h>
 #define BUFF_SIZE 1000
-
+#define NUM_LETTERS 26
 int main()
 {
-    int len;
     FILE *from, *to;
-    char symbols[256] = {0};
-    char buff[BUFF_SIZE];
+    char word1[BUFF_SIZE];
+    char word2[BUFF_SIZE];
+    int word1_unique[NUM_LETTERS] = {0};
+    int word2_unique[NUM_LETTERS] = {0};
     
     from = fopen("input.txt", "r");
     to = fopen("output.txt", "w");
 
-    fgets(buff, BUFF_SIZE, from);
+    fscanf(from, "%s %s", word1, word2);
 
-    for(int i = 0; i < strlen(buff); ++i) {
-        if (buff[i] < 256) {
-            symbols[buff[i]] += 1;
-        }
+    for(int i = 0; i < strlen(word1); ++i) {
+        word1_unique[word1[i] - 'a']++;
     }
-
-    for(int i = 0; i < 250; ++i) {
-        if (symbols[i] == 1) {
-            fputc((char) i, to);
+    for(int i = 0; i < strlen(word2); ++i) {
+        word2_unique[word2[i] - 'a']++;
+    }
+    
+    for(int i = 0; i < NUM_LETTERS; ++i) {
+        if(word1_unique[i] == 1 && word2_unique[i] == 1) {
+            fprintf(to, "%c ", (char)('a' + i));
         }
     }
 
