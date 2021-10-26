@@ -1,8 +1,21 @@
-tempreture: main.o foo.o
-    gcc -o tempreture main.o foo.o
+CC=gcc
+CFLAGS=-std=c99
+OBJ = temp_stat.o temp_functions.o parse_args.o
+all: temperature_statistics
 
-main.o: main.c foo.h
-    gcc -c main.c
+temperature_statistics: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o temperature_statistics
 
-temp_api.o: temp_api.c temp_api.h
-    gcc -c temp_api.c
+temp_stat.o: temp_stat.c temp_functions.h parse_args.h
+	$(CC) $(CFLAGS) -c temp_stat.c
+
+temp_functions.o: temp_functions.c temp_functions.h
+	$(CC) $(CFLAGS) -c temp_functions.c
+
+parse_args.o: parse_args.c parse_args.h
+	$(CC) $(CFLAGS) -c parse_args.c
+
+.PHONY: clean
+
+clean:
+	rm $(OBJ) temperature_statistics
